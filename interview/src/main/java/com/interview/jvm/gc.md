@@ -9,7 +9,11 @@
 
 ## 垃圾收集器
    1.Serial收集器
-   >   它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程（ "Stop The World" ），直到它收集结束。
-   新生代采用复制算法，老年代采用标记-整理算法。
+   >* 它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程（ "Stop The World" ），直到它收集结束。
+   >* 新生代采用复制算法，老年代采用标记-整理算法。
   ![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/Serial.png)
 
+   2.ParNew收集器
+   >* ParNew收集器其实就是Serial收集器的多线程版本，除了使用多线程进行垃圾收集外，其余行为（控制参数、收集算法、回收策略等等）和Serial收集器完全一样。
+   >* 新生代采用复制算法，老年代采用标记-整理算法。
+   ![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/parNew.png)
