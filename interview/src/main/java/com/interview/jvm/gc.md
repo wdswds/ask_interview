@@ -16,4 +16,4 @@
    2.ParNew收集器
    >* ParNew收集器其实就是Serial收集器的多线程版本，除了使用多线程进行垃圾收集外，其余行为（控制参数、收集算法、回收策略等等）和Serial收集器完全一样。
    >* 新生代采用复制算法，老年代采用标记-整理算法。
-   ![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/parNew.png)
+   ![Image text](https://java-pic-1257899057.cos.ap-shanghai.myqcloud.com/java/parNew.png)
