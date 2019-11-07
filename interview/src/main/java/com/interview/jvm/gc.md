@@ -7,3 +7,9 @@
     * GC Roots根节点：类加载器、Thread、虚拟机栈的本地变量表、static成员、常量引用、本地方法栈的变量等等
 ![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95.jpg)
 
+## 垃圾收集器
+   1.Serial收集器
+   >   它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程（ "Stop The World" ），直到它收集结束。
+   新生代采用复制算法，老年代采用标记-整理算法。
+  ![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/Serial.png)
+
