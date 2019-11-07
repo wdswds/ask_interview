@@ -3,6 +3,6 @@
 >       >* 给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加1；当引用失效，计数器就减1；任何时候计数器为0的对象就是不可能再被使用的。
 >       >* 缺点：它很难解决对象之间相互循环引用的问题。
 >   2. 可达性分析算法
-![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90.png)
+![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95.jpg)
 >       >* “GC Roots” 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。
 >       >* GC Roots根节点：类加载器、Thread、虚拟机栈的本地变量表、static成员、常量引用、本地方法栈的变量等等
