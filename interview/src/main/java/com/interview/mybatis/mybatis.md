@@ -1,6 +1,6 @@
 # Mybatis缓存
    MyBatis的缓存机制整体设计以及二级缓存的工作模式
-![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/cache.png)
+![Image text](https://wds-picture.oss-cn-shanghai.aliyuncs.com/java/mybatis_cache.png?Expires=1573103022&OSSAccessKeyId=TMP.hfRnsNBo544sv8KPmrxC4GYsFMwCpGkbgVbiUhocBSze4rHopbkSzXK7sJRdYTNPzySRYn69LBANtCz7Go45jwQN1Jds256xMkuHiiNf34vDVVPRXopQAJCYzQwefC.tmp&Signature=gt5yhsfORJLGhwN3WqvAdTGBiUc%3D)
 
 ## 一级缓存的生命周期有多长？
 　  a、MyBatis在开启一个数据库会话时，会 创建一个新的SqlSession对象，SqlSession对象中会有一个新的Executor对象。Executor对象中持有一个新的PerpetualCache对象；当会话结束时，SqlSession对象及其内部的Executor对象还有PerpetualCache对象也一并释放掉。
