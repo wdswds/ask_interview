@@ -8,5 +8,12 @@
     <artifactId>interview</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <dependencies>
+        <!--分布式锁-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.2.3</version>
+        </dependency>
+    </dependencies>
 </project>
