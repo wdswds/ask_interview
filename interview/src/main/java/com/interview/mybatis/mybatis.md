@@ -1,6 +1,6 @@
 # Mybatis缓存
    MyBatis的缓存机制整体设计以及二级缓存的工作模式，Mybatis通过缓存机制减轻数据库眼里，提高数据库性能
-![add image](https://github.com/wdswds/ask_interview/tree/master/interview/src/main/java/com/interview/image/mybatis_cache.png)
+![mybatis_cache](../image/mybatis_cache.png)
 
 
 

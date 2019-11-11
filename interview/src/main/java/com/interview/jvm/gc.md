@@ -5,18 +5,18 @@
 2. 可达性分析算法
     * “GC Roots” 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。
     * GC Roots根节点：类加载器、Thread、虚拟机栈的本地变量表、static成员、常量引用、本地方法栈的变量等等
-![add image](https://github.com/wdswds/ask_interview/tree/master/interview/src/main/java/com/interview/image/gc_root.jpg)
+![gc_root](../image/gc_root.jpg)
 
 ## 垃圾收集器
    1.Serial收集器
    >* 它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程（ "Stop The World" ），直到它收集结束。
    >* 新生代采用复制算法，老年代采用标记-整理算法。
-  ![add image](https://github.com/wdswds/ask_interview/tree/master/interview/src/main/java/com/interview/image/Serial.png)
+  ![Serial](../image/Serial.png)
 
    2.ParNew收集器
    >* ParNew收集器其实就是Serial收集器的多线程版本，除了使用多线程进行垃圾收集外，其余行为（控制参数、收集算法、回收策略等等）和Serial收集器完全一样。
    >* 新生代采用复制算法，老年代采用标记-整理算法。
-   ![add image](https://github.com/wdswds/ask_interview/tree/master/interview/src/main/java/com/interview/image/parNew.png)
+   ![parNew](../image/parNew.png)
    
    3.CMS收集器(-XX:+UseConcMarkSweepGC(主要是old区使用))
    >* CMS（Concurrent Mark Sweep）收集器是一种以获取最短回收停顿时间为目标的收集器。CMS收集器是一种 “标记-清除”算法实现的
@@ -34,7 +34,7 @@
    
    4.G1收集器(-XX:+UseG1GC)
    >*   主要针对配备多颗处理器及大容量内存的机器,G1将Java堆划分为多个大小相等的独立区域,分配大对象（直接进Humongous区，专门存放短期巨型对象，不用直接进老年代，避免Full GC的大量开销）不会因为无法找到连续空间而提前触发下一次GC。
-   ![add image](https://github.com/wdswds/ask_interview/tree/master/interview/src/main/java/com/interview/image/G1%20region.png)
+   ![G1_region](../image/G1_region.png)
    >*   G1收集器操作步骤：
    >    >   * 初始标记：在此阶段，G1 GC 对根进行标记。出现STW
    >    >   * 并发标记：G1 GC 在整个堆中查找可访问的（存活的）对象。
