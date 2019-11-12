@@ -2,7 +2,9 @@
    MyBatis的缓存机制整体设计以及二级缓存的工作模式，Mybatis通过缓存机制减轻数据库眼里，提高数据库性能
 ![mybatis_cache](../image/mybatis_cache.png)
 
-
+## 一级缓存
+   * Mybatis的一级缓存是SqlSession级别的。在操作数据库时需要构造SqlSession对象，在对象中有一个HashMap用于存储缓存数据。不同的SqlSession之间的缓存数据区域是互相不影响的。
+   * 
 
 
 ## 一级缓存的生命周期有多长？
@@ -19,5 +21,6 @@
 　　2.4 传递给java.sql.Statement要设置的参数值
 
 ## 二级缓存
-   MyBatis的二级缓存是Application级别的缓存，它可以提高对数据库查询的效率，以提高应用的性能。
+   MyBatis的二级缓存是Mapper级别的缓存，它可以提高对数据库查询的效率，以提高应用的性能。
    SqlSessionFactory层面上的二级缓存默认是不开启的，二级缓存的开席需要进行配置，实现二级缓存的时候，MyBatis要求返回的POJO必须是可序列化的。
+   
